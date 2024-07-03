@@ -10,7 +10,7 @@ router.get('/:network/:endpoint', async (req, res) => {
     const data = await apiService(network, endpoint);
     res.json(data);
   } catch (error) {
-    res.status(error.response?.status || 500).json({ error: error.message });
+    res.status(error.response.status || 500).json({ error: error.message });
   }
 });
 
