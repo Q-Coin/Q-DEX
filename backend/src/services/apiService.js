@@ -10,7 +10,7 @@ const apiService = async (network, endpoint) => {
 
   const response = await axios.get(`${networkUrl}${endpoint}`, {
     headers: {
-      'Authorization': `Bearer ${config.org0xApiKey}`
+      '0x-api-key': config.org0xApiKey
     }
   });
 

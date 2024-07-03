@@ -2,9 +2,9 @@ const express = require('express');
 const apiService = require('../services/apiService');
 const router = express.Router();
 
-router.get('/:network/:endpoint', async (req, res) => {
+router.get('/:network/*', async (req, res) => {
   const network = req.params.network;
-  const endpoint = req.params.endpoint;
+  const endpoint = req.params[0] + (Object.keys(req.query).length ? '?' + new URLSearchParams(req.query).toString() : '');
 
   try {
     const data = await apiService(network, endpoint);
