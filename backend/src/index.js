@@ -1,17 +1,19 @@
 const express = require('express');
-
+const config = require('./config');
+const apiRoutes = require('./routes/apiRoutes');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+//import des middlewares
+const cors = require('./middlewares/cors');
+const logger = require('./middlewares/logger');
+const ratelimits = require('./middlewares/ratelimit');
 
-app.get('/api', (req, res) => {
-    res.send('API');
-});
+app.use(cors);
+app.use(logger);
+app.use(ratelimits);
 
+app.use('/api', apiRoutes);
 
-
-app.listen(8000, () => {
-    console.log("Server is running on port 8000");
+app.listen(config.port, () => {
+  console.log(`Server running on port ${config.port}`);
 });
