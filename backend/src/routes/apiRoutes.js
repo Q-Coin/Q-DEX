@@ -3,7 +3,7 @@ const apiService = require('../services/apiService');
 const router = express.Router();
 const injParam = require('../middlewares/injParam');
 
-router.get('/:network/swap/*', injParam, async (req, res) => {
+router.get('/swap/:network/*', injParam, async (req, res) => {
   const network = req.params.network;
   const endpoint = req.params[0] + (Object.keys(req.query).length ? '?' + new URLSearchParams(req.query).toString() : '');
 
@@ -15,7 +15,7 @@ router.get('/:network/swap/*', injParam, async (req, res) => {
   }
 });
 
-router.get('/:network/explorer/*', async (req, res) => {
+router.get('/explorer/:network/*', async (req, res) => {
   const network = req.params.network;
   const endpoint = req.params[0] + (Object.keys(req.query).length ? '?' + new URLSearchParams(req.query).toString() : '');
 

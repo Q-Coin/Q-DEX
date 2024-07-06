@@ -7,7 +7,7 @@ const apiService = async (network, endpoint) => {
   if (!networkUrl) {
     throw new Error('Invalid network');
   }
-
+  console.log(`${networkUrl}${endpoint}`);
   const response = await axios.get(`${networkUrl}${endpoint}`, {
     headers: {
       '0x-api-key': config.org0xApiKey

@@ -1,13 +1,13 @@
 module.exports = {
   port: 3000,
-  org0xApiKey: "your-api-key",
+  org0xApiKey: "296a9e73-7415-4ac2-b5e6-fd8b02487ec4",
   excludedSources: "",
   skipValidation: false,
   priceImpactProtectionPercentage: 1.0,
   fees: {
-    feeRecipient: "",
-    buyTokenPercentageFee: 0.0085,
-    feeRecipientTradeSurplus: ""
+    feeRecipient: "0xB0A45A799a8642a56F87F776b4D8A7603108b14b",
+    buyTokenPercentageFee: 0.5,
+    feeRecipientTradeSurplus: "0xB0A45A799a8642a56F87F776b4D8A7603108b14b"
   },
   cors: {
     origins: ['*'],
