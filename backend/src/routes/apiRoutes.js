@@ -1,8 +1,9 @@
 const express = require('express');
 const apiService = require('../services/apiService');
 const router = express.Router();
+const injParam = require('../middlewares/injParam');
 
-router.get('/:network/*', async (req, res) => {
+router.get('/:network/*', injParam, async (req, res) => {
   const network = req.params.network;
   const endpoint = req.params[0] + (Object.keys(req.query).length ? '?' + new URLSearchParams(req.query).toString() : '');
 

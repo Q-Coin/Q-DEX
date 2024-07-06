@@ -1,6 +1,14 @@
 module.exports = {
   port: 3000,
   org0xApiKey: "your-api-key",
+  excludedSources: "",
+  skipValidation: false,
+  priceImpactProtectionPercentage: 1.0,
+  fees: {
+    feeRecipient: "",
+    buyTokenPercentageFee: 0.0085,
+    feeRecipientTradeSurplus: ""
+  },
   cors: {
     origins: ['*'],
     optionsSuccessStatus: 200,
